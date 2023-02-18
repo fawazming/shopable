@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <script>
+    fetch('https://raw.githubusercontent.com/fawazming/cdn/master/productContent.json')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+    </script>
+</body>
+</html>
