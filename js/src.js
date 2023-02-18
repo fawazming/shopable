@@ -12,7 +12,7 @@
             if(store.getters.productsLoading.value){
                 displayProds();
             }else{
-                console.log(store.getters.products.value);
+                // console.log(store.getters.products.value);
                 populateListed(store.getters.products.value.products);
                 app.preloader.hide();
             }
@@ -26,7 +26,7 @@
             outp += `<div class="swiper-slide">
                         <div class="item-bx">
                             <div class="dz-media">
-                                <a href="/item-details/"><img src="${pd.image}" alt=""></a>
+                                <a href="/product/${pd.id}"><img src="${pd.image}" alt=""></a>
                             </div>
                             <div class="dz-info">
                                 <div class="dz-head">
@@ -60,11 +60,11 @@
             outp += `<li class="col-100 medium-50 mb-20">
                                 <div class="item-bx style-1 item-list">
                                     <div class="dz-media">
-                                        <a href="/item-details/"><img src="${pd.image}" alt=""></a>
+                                        <a href="/product/${pd.id}"><img src="${pd.image}" alt=""></a>
                                     </div>
                                     <div class="dz-info">
                                         <div class="dz-head">
-                                            <h6 class="item-title"><a href="/item-details/">${pd.title}</a></h6>
+                                            <h6 class="item-title"><a href="/product/${pd.id}">${pd.title}</a></h6>
                                         </div>
                                         <div class="dz-meta">
                                             <ul>
