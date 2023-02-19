@@ -1,4 +1,42 @@
-
+<script>
+function displayCart() {
+  var cartArray = shoppingCart.listCart();
+  var output = "";
+  for(var i in cartArray) {
+    output += `
+        <div class="col-100 medium-50 pb-10">
+            <div class="cart-item">
+                <div class="item-head">
+                    <p class="item-num">#125125671</p>
+                    <h5 class="status text-primary">ON DELIVERY</h5>
+                </div>
+                <div class="item-body">
+                    <div class="dz-media">
+                        <img src="img/products/product1.jpg" alt="">
+                    </div>
+                    <div class="dz-info">
+                        <div class="dz-head">
+                            <h6 class="item-title"><a href="/item-details/">${cartArray[i].name}</a></h6>
+                        </div>
+                        <div class="dz-foot">
+                            <!--<div class="badge-md">GOLD</div>-->
+                            <h4 class="price">$${cartArray[i].price}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-footer">
+                    <h5 class="total">Total Price (${cartArray[i].count} Item)</h5>
+                    <h4 class="total-price">$${cartArray[i].price*cartArray[i].count}</h4>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+    document.querySelector('#show-cart').innerHTML = output;
+}
+displayCart();
+console.log('Cart');
+</script>
 <div class="page">
 	
 	<div class="navbar navbar-style-1">
@@ -34,15 +72,9 @@
 					<div class="swiper-slide">
 						<a href="#tab-1" class="tab-link tab-link-active">All</a>
 					</div>
-					<div class="swiper-slide">
+					<!-- <div class="swiper-slide">
 						<a href="#tab-2" class="tab-link">Pending</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="#tab-3" class="tab-link">On Delivery</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="#tab-4" class="tab-link">Done</a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<div class="list simple-list searchbar-not-found">
@@ -55,310 +87,12 @@
 		<div class="tabs-swipeable-wrap mt-30 tabs-height-auto">
 			<div class="tabs">
 				<div id="tab-1" class="tab tab-active">
-					<div class="row container pa-0">
+					<div class="row container pa-0" id="show-cart">
 						<div class="col-100 medium-50 pb-10">
 							<div class="cart-item">
 								<div class="item-head">
 									<p class="item-num">#125125671</p>
 									<h5 class="status text-primary">ON DELIVERY</h5>
-								</div>
-								<div class="item-body">
-									<div class="dz-media">
-										<img src="img/products/product1.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-head">
-											<h6 class="item-title"><a href="/item-details/">Pormula 1 Exclusive Watch [GOLD]</a></h6>
-										</div>
-										<div class="dz-foot">
-											<div class="badge-md">GOLD</div>
-											<h4 class="price"><del>$170</del>$158.2</h4>
-										</div>
-									</div>
-								</div>
-								<div class="item-footer">
-									<h5 class="total">Total Price (1 Item)</h5>
-									<h4 class="total-price">$316.4</h4>
-								</div>
-							</div>
-						</div>
-						<div class="col-100 medium-50 pb-10">
-							<div class="cart-item">
-								<div class="item-head">
-									<p class="item-num">#15151513516</p>
-									<h5 class="status text-secondary">PENDING</h5>
-								</div>
-								<div class="item-body">
-									<div class="dz-media">
-										<img src="img/products/product2.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-head">
-											<h6 class="item-title"><a href="/item-details/">Marron Casual Sneakers</a></h6>
-										</div>
-										<div class="dz-foot">
-											<div class="badge-md">34 Size</div>
-											<h4 class="price">$220.3</h4>
-										</div>
-									</div>
-								</div>
-								<div class="item-footer">
-									<h5 class="total">Total Price (1 Item)</h5>
-									<h4 class="total-price">$220.3</h4>
-								</div>
-							</div>
-						</div>
-						<div class="col-100 medium-50 pb-10">
-							<div class="cart-item">
-								<div class="item-head">
-									<p class="item-num">#125125671</p>
-									<h5 class="status text-success">DONE</h5>
-								</div>
-								<div class="item-body">
-									<div class="dz-media">
-										<img src="img/products/product3.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-head">
-											<h6 class="item-title"><a href="/item-details/">Casual Beach Hat for Women</a></h6>
-										</div>
-										<div class="dz-foot">
-											<div class="badge-md">Silver</div>
-											<h4 class="price"><del>$170</del>$158.2</h4>
-										</div>
-									</div>
-								</div>
-								<div class="item-footer">
-									<h5 class="total">Total Price (2 Item)</h5>
-									<h4 class="total-price">$316.4</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="tab-2" class="tab">
-					<div class="row container pa-0">
-						<div class="col-100 medium-50 pb-10">
-							<div class="cart-item">
-								<div class="item-head">
-									<p class="item-num">#15151513516</p>
-									<h5 class="status text-secondary">PENDING</h5>
-								</div>
-								<div class="item-body">
-									<div class="dz-media">
-										<img src="img/products/product2.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-head">
-											<h6 class="item-title"><a href="/item-details/">Marron Casual Sneakers</a></h6>
-										</div>
-										<div class="dz-foot">
-											<div class="badge-md">34 Size</div>
-											<h4 class="price">$220.3</h4>
-										</div>
-									</div>
-								</div>
-								<div class="item-footer">
-									<h5 class="total">Total Price (1 Item)</h5>
-									<h4 class="total-price">$220.3</h4>
-								</div>
-							</div>
-						</div>
-						<div class="col-100 medium-50 pb-10">
-							<div class="cart-item">
-								<div class="item-head">
-									<p class="item-num">#125125671</p>
-									<h5 class="status text-secondary">PENDING</h5>
-								</div>
-								<div class="item-body">
-									<div class="dz-media">
-										<img src="img/products/product3.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-head">
-											<h6 class="item-title"><a href="/item-details/">Casual Beach Hat for Women</a></h6>
-										</div>
-										<div class="dz-foot">
-											<div class="badge-md">Silver</div>
-											<h4 class="price"><del>$170</del>$158.2</h4>
-										</div>
-									</div>
-								</div>
-								<div class="item-footer">
-									<h5 class="total">Total Price (2 Item)</h5>
-									<h4 class="total-price">$316.4</h4>
-								</div>
-							</div>
-						</div>
-						<div class="col-100 medium-50 pb-10">
-							<div class="cart-item">
-								<div class="item-head">
-									<p class="item-num">#125125671</p>
-									<h5 class="status text-secondary">PENDING</h5>
-								</div>
-								<div class="item-body">
-									<div class="dz-media">
-										<img src="img/products/product1.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-head">
-											<h6 class="item-title"><a href="/item-details/">Pormula 1 Exclusive Watch [GOLD]</a></h6>
-										</div>
-										<div class="dz-foot">
-											<div class="badge-md">GOLD</div>
-											<h4 class="price"><del>$170</del>$158.2</h4>
-										</div>
-									</div>
-								</div>
-								<div class="item-footer">
-									<h5 class="total">Total Price (1 Item)</h5>
-									<h4 class="total-price">$316.4</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="tab-3" class="tab">
-					<div class="row container pa-0">
-						<div class="col-100 medium-50 pb-10">
-							<div class="cart-item">
-								<div class="item-head">
-									<p class="item-num">#15151513516</p>
-									<h5 class="status text-primary">ON DELIVERY</h5>
-								</div>
-								<div class="item-body">
-									<div class="dz-media">
-										<img src="img/products/product2.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-head">
-											<h6 class="item-title"><a href="/item-details/">Marron Casual Sneakers</a></h6>
-										</div>
-										<div class="dz-foot">
-											<div class="badge-md">34 Size</div>
-											<h4 class="price">$220.3</h4>
-										</div>
-									</div>
-								</div>
-								<div class="item-footer">
-									<h5 class="total">Total Price (1 Item)</h5>
-									<h4 class="total-price">$220.3</h4>
-								</div>
-							</div>
-						</div>
-						<div class="col-100 medium-50 pb-10">
-							<div class="cart-item">
-								<div class="item-head">
-									<p class="item-num">#125125671</p>
-									<h5 class="status text-primary">ON DELIVERY</h5>
-								</div>
-								<div class="item-body">
-									<div class="dz-media">
-										<img src="img/products/product3.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-head">
-											<h6 class="item-title"><a href="/item-details/">Casual Beach Hat for Women</a></h6>
-										</div>
-										<div class="dz-foot">
-											<div class="badge-md">Silver</div>
-											<h4 class="price"><del>$170</del>$158.2</h4>
-										</div>
-									</div>
-								</div>
-								<div class="item-footer">
-									<h5 class="total">Total Price (2 Item)</h5>
-									<h4 class="total-price">$316.4</h4>
-								</div>
-							</div>
-						</div>
-						<div class="col-100 medium-50 pb-10">
-							<div class="cart-item">
-								<div class="item-head">
-									<p class="item-num">#125125671</p>
-									<h5 class="status text-primary">ON DELIVERY</h5>
-								</div>
-								<div class="item-body">
-									<div class="dz-media">
-										<img src="img/products/product1.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-head">
-											<h6 class="item-title"><a href="/item-details/">Pormula 1 Exclusive Watch [GOLD]</a></h6>
-										</div>
-										<div class="dz-foot">
-											<div class="badge-md">GOLD</div>
-											<h4 class="price"><del>$170</del>$158.2</h4>
-										</div>
-									</div>
-								</div>
-								<div class="item-footer">
-									<h5 class="total">Total Price (1 Item)</h5>
-									<h4 class="total-price">$316.4</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="tab-4" class="tab">
-					<div class="row container pa-0">
-						<div class="col-100 medium-50 pb-10">
-							<div class="cart-item">
-								<div class="item-head">
-									<p class="item-num">#15151513516</p>
-									<h5 class="status text-success">Done</h5>
-								</div>
-								<div class="item-body">
-									<div class="dz-media">
-										<img src="img/products/product2.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-head">
-											<h6 class="item-title"><a href="/item-details/">Marron Casual Sneakers</a></h6>
-										</div>
-										<div class="dz-foot">
-											<div class="badge-md">34 Size</div>
-											<h4 class="price">$220.3</h4>
-										</div>
-									</div>
-								</div>
-								<div class="item-footer">
-									<h5 class="total">Total Price (1 Item)</h5>
-									<h4 class="total-price">$220.3</h4>
-								</div>
-							</div>
-						</div>
-						<div class="col-100 medium-50 pb-10">
-							<div class="cart-item">
-								<div class="item-head">
-									<p class="item-num">#125125671</p>
-									<h5 class="status text-success">Done</h5>
-								</div>
-								<div class="item-body">
-									<div class="dz-media">
-										<img src="img/products/product3.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-head">
-											<h6 class="item-title"><a href="/item-details/">Casual Beach Hat for Women</a></h6>
-										</div>
-										<div class="dz-foot">
-											<div class="badge-md">Silver</div>
-											<h4 class="price"><del>$170</del>$158.2</h4>
-										</div>
-									</div>
-								</div>
-								<div class="item-footer">
-									<h5 class="total">Total Price (2 Item)</h5>
-									<h4 class="total-price">$316.4</h4>
-								</div>
-							</div>
-						</div>
-						<div class="col-100 medium-50 pb-10">
-							<div class="cart-item">
-								<div class="item-head">
-									<p class="item-num">#125125671</p>
-									<h5 class="status text-success">Done</h5>
 								</div>
 								<div class="item-body">
 									<div class="dz-media">

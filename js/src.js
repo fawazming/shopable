@@ -87,11 +87,13 @@
     }
 
 
+    function cart(name, price) {
+        console.log(name,price);
+        store.dispatch('addItemToCart', {name, price})
+    }
 
-    app.on('pageInit', function (page) {
-        console.log('Page Init');
-    })
-    // console.log(store.getters.usersLoading.value);
-    // store.dispatch('loadUsers');
-    // store.dispatch('helloWorld');
 
+
+    // app.on('pageInit', function (page) {
+    //     console.log('Page Init');
+    // })

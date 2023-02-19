@@ -1,0 +1,178 @@
+<!-- component template, uses same tagged template literals -->
+<template>
+    <div class="page">
+        <div class="navbar navbar-style-1">
+            <div class="navbar-inner">
+                <a href="#" class="link back">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.439312 13.0606L5.75391 18.3752C6.04683 18.6682 6.43069 18.8146 6.81459 18.8146C7.1985 18.8146 7.58236 18.6682 7.87528 18.3752C8.46103 17.7894 8.46103 16.8397 7.87528 16.2539L5.12133 13.5H22.5C23.3284 13.5 24 12.8284 24 12C24 11.1716 23.3284 10.5 22.5 10.5H5.12133L7.87528 7.7461C8.46103 7.1603 8.46103 6.21057 7.87528 5.62477C7.28944 5.03898 6.33975 5.03898 5.75391 5.62477L0.439312 10.9394C-0.146437 11.5251 -0.146437 12.4749 0.439312 13.0606Z" fill="black" />
+                    </svg>
+                </a>
+                <div class="title">Cart</div>
+                <div class="right">
+                    <a href="#" class="link panel-open" data-panel="left">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 12C14 10.8955 13.1046 10 12 10C10.8954 10 10 10.8955 10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12Z" fill="black" />
+                            <path d="M14 20C14 18.8954 13.1046 18 12 18C10.8954 18 10 18.8954 10 20C10 21.1045 10.8954 22 12 22C13.1046 22 14 21.1045 14 20Z" fill="black" />
+                            <path d="M14 4C14 2.89544 13.1046 2.00001 12 2.00001C10.8954 2.00001 10 2.89544 10 4C10 5.10457 10.8954 6 12 6C13.1046 6 14 5.10457 14 4Z" fill="black" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="page-content content-area pt-70 bottom-sp80">
+            <!-- Search backdrop -->
+            <div class="searchbar-backdrop"></div>
+            <div class="container">
+                <div data-space-between="0" data-slides-per-view="auto" data-centered-slides="false" class="swiper-container swiper-init tabbar tab-style-2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#tab-1" class="tab-link tab-link-active">All</a>
+                        </div>
+                        <!-- <div class="swiper-slide">
+                        <a href="#tab-2" class="tab-link">Pending</a>
+                    </div> -->
+                    </div>
+                </div>
+                <div class="list simple-list searchbar-not-found">
+                    <ul>
+                        <li>Nothing found</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tabs-swipeable-wrap mt-30 tabs-height-auto">
+                <div class="tabs">
+                    <div id="tab-1" class="tab tab-active">
+                        <div class="row container pa-0" id="show-cart" innerHTML=${cartList}>
+                            <!-- <div class="col-100 medium-50 pb-10">
+                                <div class="cart-item">
+                                    <div class="item-head">
+                                        <p class="item-num">#125125671</p>
+                                        <h5 class="status text-primary">ON DELIVERY</h5>
+                                    </div>
+                                    <div class="item-body">
+                                        <div class="dz-media">
+                                            <img src="http://localhost/gaya/img/products/product1.jpg" alt="" />
+                                        </div>
+                                        <div class="dz-info">
+                                            <div class="dz-head">
+                                                <h6 class="item-title"><a href="/item-details/">Pormula 1 Exclusive Watch [GOLD]</a></h6>
+                                            </div>
+                                            <div class="dz-foot">
+                                                <div class="badge-md">GOLD</div>
+                                                <h4 class="price"><del>$170</del>$158.2</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-footer">
+                                        <h5 class="total">Total Price (1 Item)</h5>
+                                        <h4 class="total-price">$316.4</h4>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Toolbar Bottom -->
+        <div class="toolbar tabbar tabbar-labels toolbar-bottom menubar-area">
+            <div class="toolbar-inner">
+                <a href="/" class="tab-link">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.752 2H4.648C3.18555 2 2 3.18555 2 4.648V9.752C2 11.2144 3.18555 12.4 4.648 12.4H9.752C11.2144 12.4 12.4 11.2144 12.4 9.752V4.648C12.4 3.18555 11.2144 2 9.752 2Z" fill="#2B39B9" />
+                        <path d="M23.352 2H18.248C16.7856 2 15.6 3.18555 15.6 4.648V9.752C15.6 11.2144 16.7856 12.4 18.248 12.4H23.352C24.8145 12.4 26 11.2144 26 9.752V4.648C26 3.18555 24.8145 2 23.352 2Z" fill="#2B39B9" />
+                        <path d="M9.752 15.6H4.648C3.18555 15.6 2 16.7856 2 18.248V23.352C2 24.8145 3.18555 26 4.648 26H9.752C11.2144 26 12.4 24.8145 12.4 23.352V18.248C12.4 16.7856 11.2144 15.6 9.752 15.6Z" fill="#2B39B9" />
+                        <path d="M20.8 26C23.6719 26 26 23.6719 26 20.8C26 17.9281 23.6719 15.6 20.8 15.6C17.9281 15.6 15.6 17.9281 15.6 20.8C15.6 23.6719 17.9281 26 20.8 26Z" fill="#2B39B9" />
+                    </svg>
+                    <span>Home</span>
+                </a>
+                <a href="/checkout-payment-method/" class="tab-link">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.75 3.0625H5.25C4.55381 3.0625 3.88613 3.33906 3.39384 3.83134C2.90156 4.32363 2.625 4.99131 2.625 5.6875V22.3125C2.625 23.0087 2.90156 23.6764 3.39384 24.1687C3.88613 24.6609 4.55381 24.9375 5.25 24.9375H22.75C23.4462 24.9375 24.1139 24.6609 24.6062 24.1687C25.0984 23.6764 25.375 23.0087 25.375 22.3125V5.6875C25.375 4.99131 25.0984 4.32363 24.6062 3.83134C24.1139 3.33906 23.4462 3.0625 22.75 3.0625ZM7.06562 12.1494C6.99971 11.9892 6.98282 11.8131 7.01709 11.6433C7.05135 11.4735 7.13524 11.3177 7.25813 11.1956L9.88313 8.57063C10.0505 8.42728 10.2658 8.35237 10.486 8.36088C10.7063 8.36938 10.9152 8.46067 11.071 8.61651C11.2268 8.77234 11.3181 8.98124 11.3266 9.20145C11.3351 9.42167 11.2602 9.63699 11.1169 9.80437L9.98812 10.9375H19.6875C19.9196 10.9375 20.1421 11.0297 20.3062 11.1938C20.4703 11.3579 20.5625 11.5804 20.5625 11.8125C20.5625 12.0446 20.4703 12.2671 20.3062 12.4312C20.1421 12.5953 19.9196 12.6875 19.6875 12.6875H7.875C7.702 12.6879 7.53279 12.6369 7.38872 12.5412C7.24466 12.4454 7.13223 12.309 7.06562 12.1494ZM21.1794 17.2419L18.5544 19.8669C18.4759 19.9585 18.3794 20.0329 18.2708 20.0854C18.1623 20.1379 18.0441 20.1674 17.9235 20.1721C17.803 20.1767 17.6829 20.1564 17.5706 20.1124C17.4583 20.0684 17.3563 20.0017 17.2711 19.9164C17.1858 19.8312 17.1191 19.7292 17.0751 19.6169C17.0311 19.5046 17.0108 19.3845 17.0154 19.264C17.0201 19.1434 17.0496 19.0252 17.1021 18.9167C17.1546 18.8081 17.229 18.7116 17.3206 18.6331L18.4494 17.5H8.75C8.51794 17.5 8.29538 17.4078 8.13128 17.2437C7.96719 17.0796 7.875 16.8571 7.875 16.625C7.875 16.3929 7.96719 16.1704 8.13128 16.0063C8.29538 15.8422 8.51794 15.75 8.75 15.75H20.5625C20.7355 15.7496 20.9047 15.8006 21.0488 15.8963C21.1928 15.9921 21.3053 16.1285 21.3719 16.2881C21.4378 16.4483 21.4547 16.6244 21.4204 16.7942C21.3861 16.964 21.3023 17.1198 21.1794 17.2419Z" fill="#B9BCD3" />
+                    </svg>
+                    <span>Transaction</span>
+                </a>
+                <a href="/shopping-cart/" class="tab-link active">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26.9657 7.50236L25.0988 17.1356C24.9727 17.7824 24.6239 18.3655 24.1122 18.7852C23.6006 19.2049 22.9578 19.4351 22.2939 19.4364H9.23128C8.6013 19.4337 7.98986 19.2246 7.49201 18.8415C6.99416 18.4584 6.63779 17.9229 6.47831 17.3181C6.45639 17.2665 3.55384 2.89091 3.55384 2.89091H1.95275C1.70006 2.89091 1.45773 2.7913 1.27905 2.61399C1.10038 2.43668 1 2.1962 1 1.94545C1 1.6947 1.10038 1.45422 1.27905 1.27692C1.45773 1.09961 1.70006 1 1.95275 1H3.55337C3.99367 1.00101 4.42012 1.15285 4.76063 1.42985C5.10114 1.70686 5.33483 2.09204 5.42218 2.52029L5.97335 5.25455H25.0945C25.3753 5.25455 25.6525 5.31611 25.9065 5.4348C26.1604 5.5535 26.3848 5.72642 26.5636 5.94118C26.7424 6.15594 26.8711 6.40725 26.9406 6.67713C27.0102 6.94701 27.0187 7.22881 26.9657 7.50236ZM11.0039 21.3273C10.4386 21.3273 9.88595 21.4936 9.41591 21.8053C8.94587 22.1169 8.57952 22.5599 8.36319 23.0782C8.14686 23.5965 8.09025 24.1668 8.20054 24.717C8.31082 25.2672 8.58305 25.7726 8.98278 26.1692C9.38251 26.5659 9.8918 26.8361 10.4462 26.9455C11.0007 27.0549 11.5754 26.9988 12.0977 26.7841C12.6199 26.5694 13.0663 26.2059 13.3804 25.7394C13.6945 25.273 13.8621 24.7246 13.8621 24.1636C13.8614 23.4116 13.56 22.6906 13.0241 22.1589C12.4883 21.6271 11.7617 21.328 11.0039 21.3273ZM20.5314 21.3273C19.966 21.3273 19.4134 21.4936 18.9434 21.8053C18.4734 22.1169 18.107 22.5599 17.8907 23.0782C17.6743 23.5965 17.6177 24.1668 17.728 24.717C17.8383 25.2672 18.1105 25.7726 18.5103 26.1692C18.91 26.5659 19.4193 26.8361 19.9737 26.9455C20.5282 27.0549 21.1029 26.9988 21.6252 26.7841C22.1474 26.5694 22.5938 26.2059 22.9079 25.7394C23.222 25.273 23.3896 24.7246 23.3896 24.1636C23.3888 23.4116 23.0875 22.6906 22.5516 22.1589C22.0157 21.6271 21.2892 21.328 20.5314 21.3273Z" fill="#B9BCD3" />
+                    </svg>
+                    <span>Cart</span>
+                </a>
+                <a href="/profile/" class="tab-link">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.652 14.5773C10.5852 14.5189 10.4309 14.3833 10.376 14.332C9.03775 13.0805 8.16102 11.1208 8.16102 8.91219C8.16102 5.05573 10.8279 2 14.0005 2C17.1731 2 19.84 5.05573 19.84 8.91219C19.84 11.1189 18.9648 13.0772 17.6301 14.3307C17.5739 14.3835 17.4166 14.5219 17.3507 14.5797L17.345 14.6755C17.3824 15.2508 17.7708 15.7492 18.3285 15.9252C22.4736 17.2297 25.4787 20.3468 25.9833 24.0412C26.0527 24.5341 25.9042 25.0326 25.576 25.4082C25.2478 25.7837 24.7723 25.9993 24.2724 25.9993C20.614 26 7.38718 26 3.72875 26C3.22849 26 2.75273 25.7843 2.42445 25.4086C2.09617 25.033 1.94756 24.5342 2.01657 24.0445C2.52238 20.3467 5.52746 17.2297 9.67193 15.9253C10.2315 15.7487 10.6204 15.2482 10.6562 14.6711L10.652 14.5773Z" fill="#B9BCD3" />
+                    </svg>
+                    <span>Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</template>
+<!-- component styles -->
+<style>
+.red-link {
+    color: red;
+}
+</style>
+<!-- rest of component logic -->
+<script>
+// script must return/export component function
+export default (props, { $f7, $on }) => {
+    function displayCart() {
+        var cartArray = $f7.store.getters.cartCopy.value;
+        var output = "";
+        for (var i in cartArray) {
+            output += `
+    <div class="col-100 medium-50 pb-10">
+        <div class="cart-item">
+            <div class="item-head">
+                <p class="item-num">#125125671</p>
+                <h5 class="status text-primary">ON DELIVERY</h5>
+            </div>
+            <div class="item-body">
+                <div class="dz-media">
+                    <img src="img/products/product1.jpg" alt="">
+                </div>
+                <div class="dz-info">
+                    <div class="dz-head">
+                        <h6 class="item-title"><a href="/item-details/">${cartArray[i].name}</a></h6>
+                    </div>
+                    <div class="dz-foot">
+                        <!--<div class="badge-md">GOLD</div>-->
+                        <h4 class="price">$${cartArray[i].price}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="item-footer">
+                <h5 class="total">Total Price (${cartArray[i].count} Item)</h5>
+                <h4 class="total-price">$${cartArray[i].price*cartArray[i].count}</h4>
+            </div>
+        </div>
+    </div>
+    `;
+        }
+        document.querySelector('#show-cart').innerHTML = output;
+    }
+    const title = 'Component Page';
+    const names = ['John', 'Vladimir', 'Timo'];
+    const cartList = '';
+
+    const openAlert = () => {
+        $f7.dialog.alert('Hello world!');
+    }
+
+    $on('pageInit', (cartList) => {
+        $f7.store.dispatch('listCart')
+        displayCart();
+        // console.log(displayCart());
+        // console.log($f7.store.getters.cartCopy.value)
+    });
+    $on('pageAfterOut', () => {
+        // page has left the view
+    });
+
+    // component function must return render function
+    return $render;
+}
+</script>
