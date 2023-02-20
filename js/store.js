@@ -22,18 +22,30 @@ var store = Framework7.createStore({
         addItemToCart({ state, dispatch }, payload) {
             for (let item in state.cart) {
                 if (state.cart[item].name === payload.name) {
-                    console.log('same');
                     state.cart[item].count++;
                     dispatch('saveCart');
                     return;
                 }
             }
-            let item = { name: payload.name, price: payload.price, count: 1 };
+            let item = { id: payload.id, name: payload.name, price: payload.price, count: 1, img: payload.img };
             state.cart.push(item);
             dispatch('saveCart');
         },
+        removeItemFromCart({ state, dispatch }, payload) {
+            for (var item in state.cart) {
+                if (state.cart[item].id === payload.id) {
+                    state.cart[item].count--;
+                    if (state.cart[item].count === 0) {
+                        state.cart.splice(item, 1);
+                    }
+                    break;
+                }
+            }
+            dispatch('saveCart');
+            dispatch('listCart');
+        },
         listCart({ state, dispatch }) {
-            // state.cartCopy = [];
+            state.cartCopy = [];
             if (localStorage.getItem("shoppingCart") != null) {
                 dispatch('loadCart');
             }
@@ -46,8 +58,6 @@ var store = Framework7.createStore({
                 itemCopy.total = Number(item.price * item.count).toFixed(2);
                 state.cartCopy.push(itemCopy)
             }
-            // console.log(state.getters.cartCopy)
-            // return cartCopy;
         },
         loadUsers({ state }) {
             state.usersLoading = true;
